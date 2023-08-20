@@ -11,7 +11,7 @@ export const NavList = styled.ul`
 const navLink = NavLink;
 export const LinkStyle = styled(navLink)`
   text-decoration: none;
-  color: #000;
+  color: ${props => (props.isActive ? '#ff8c00' : '#000')};
   font-size: 32px;
   &:hover,
   :focus {
