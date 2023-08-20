@@ -2,6 +2,7 @@ import MoviesList from 'components/MoviesList/MoviesList';
 import { fetchSearchMovie } from 'fetch/FetchApi';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { SerchBarInput, SerchBarForm, SerchBarButton } from './SerchBar.styles';
 const MoviesSearchForm = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [foundMovies, setFoundMovies] = useState([]);
@@ -35,8 +36,8 @@ const MoviesSearchForm = () => {
   return (
     <>
       {' '}
-      <form onSubmit={handleSubmit}>
-        <input
+      <SerchBarForm onSubmit={handleSubmit}>
+        <SerchBarInput
           type="text"
           autoComplete="off"
           autoFocus
@@ -44,8 +45,8 @@ const MoviesSearchForm = () => {
           placeholder="Enter movie name"
           onChange={e => setInputValue(e.currentTarget.value)}
         />{' '}
-        <button type="submit">Search</button>
-      </form>
+        <SerchBarButton type="submit">Search</SerchBarButton>
+      </SerchBarForm>
       {error && <h3>{error}</h3>}
       {foundMovies && <MoviesList movies={foundMovies} />}
     </>
