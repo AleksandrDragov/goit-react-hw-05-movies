@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { NavList, LinkStyle, ActiveLink } from './Layout.styled';
+import { NavList, LinkStyle } from './Layout.styled';
 import { Suspense } from 'react';
 import Spiner from 'components/Spiner/Spiner';
 
